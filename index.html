@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tara Gym - Premium Fitness Center in Patna. Elevate your fitness with expert trainers, modern equipment, and a powerful atmosphere.">
+    <title>Tara Gym | Unleash Your Potential</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Colors */
+            --electric-blue: hsl(220, 100%, 50%);
+            --electric-blue-hover: hsl(220, 100%, 60%);
+            --neon-green: hsl(110, 100%, 54%);
+            --neon-green-hover: hsl(110, 100%, 45%);
+            
+            --charcoal-bg: hsl(0, 0%, 8%);
+            --charcoal-light: hsl(0, 0%, 12%);
+            --charcoal-lighter: hsl(0, 0%, 18%);
+            
+            --text-light: hsl(0, 0%, 95%);
+            --text-muted: hsl(0, 0%, 70%);
+            
+            /* Typography */
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            
+            /* UI */
+            --glass-bg: rgba(30, 30, 30, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.05);
+            --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 20px rgba(0, 71, 255, 0.3);
+            --shadow-glow-green: 0 0 15px rgba(57, 255, 20, 0.3);
+            
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--charcoal-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .highlight-blue {
+            color: var(--electric-blue);
+            text-shadow: var(--shadow-glow);
+        }
+
+        .highlight-green {
+            color: var(--neon-green);
+            text-shadow: var(--shadow-glow-green);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Layout */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background-color: var(--electric-blue);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 71, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--electric-blue-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 71, 255, 0.6);
+        }
+
+        .btn-accent {
+            background-color: var(--neon-green);
+            color: var(--charcoal-bg);
+            box-shadow: 0 4px 15px rgba(57, 255, 20, 0.3);
+        }
+
+        .btn-accent:hover {
+            background-color: var(--neon-green-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(57, 255, 20, 0.5);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--electric-blue);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--electric-blue);
+            color: white;
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.2rem 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 0.8rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--electric-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--neon-green);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--neon-green);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(10,10,10,0.6) 100%);
+            overflow: hidden;
+        }
+        
+        /* Abstract Background Patterns */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(0, 71, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 30%, rgba(57, 255, 20, 0.1) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        /* Diagonal stripes effect */
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.02) 10px,
+                rgba(255, 255, 255, 0.02) 20px
+            );
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .badge-rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .badge-rating i {
+            color: #FFD700;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--charcoal-light);
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, var(--charcoal-lighter), var(--charcoal-bg));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--glass-border);
+        }
+        
+        .about-image i {
+            font-size: 8rem;
+            color: rgba(255, 255, 255, 0.05);
+            background: -webkit-linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.8;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 2px solid var(--electric-blue);
+            border-radius: 8px;
+            transform: translate(15px, 15px);
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .about-content h3 {
+            font-size: 1.5rem;
+            color: var(--electric-blue);
+            margin-bottom: 1rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .features-list li i {
+            color: var(--neon-green);
+            font-size: 1.2rem;
+            background: rgba(57, 255, 20, 0.1);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--charcoal-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--charcoal-light);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--electric-blue);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: var(--charcoal-lighter);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card:nth-child(2):hover::before {
+            background: var(--neon-green);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--electric-blue);
+        }
+        
+        .service-card:nth-child(2) .service-icon {
+            color: var(--neon-green);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* Facilities Gallery (Demo) */
+        .facilities {
+            background-color: var(--charcoal-light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            background: linear-gradient(45deg, var(--charcoal-bg), var(--charcoal-lighter));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover {
+            border-color: var(--electric-blue);
+            box-shadow: inset 0 0 50px rgba(0, 71, 255, 0.1);
+        }
+
+        .gallery-item i {
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            margin-bottom: 1rem;
+        }
+
+        .gallery-item:hover i {
+            color: var(--electric-blue);
+            transform: scale(1.1);
+        }
+        
+        .gallery-item:nth-child(even):hover i {
+            color: var(--neon-green);
+        }
+        
+        .gallery-item:nth-child(even):hover {
+            border-color: var(--neon-green);
+            box-shadow: inset 0 0 50px rgba(57, 255, 20, 0.1);
+        }
+
+        .gallery-item h4 {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            z-index: 2;
+        }
+
+        .demo-label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(90deg, var(--electric-blue-hover), var(--electric-blue));
+            padding: 4rem 0;
+            color: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-item h3 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        /* Testimonials (Demo) */
+        .testimonials {
+            background-color: var(--charcoal-bg);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--charcoal-light);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            position: relative;
+        }
+        
+        .testimonial-card i.fa-quote-left {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.05);
+        }
+
+        .stars {
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--charcoal-lighter);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--electric-blue);
+            font-weight: bold;
+            font-family: var(--font-heading);
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Location & Hours Section */
+        .location-contact {
+            background-color: var(--charcoal-light);
+        }
+        
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-info-card {
+            background: var(--charcoal-bg);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--electric-blue);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .contact-info-card h3 i {
+            color: var(--neon-green);
+        }
+        
+        .info-list {
+            list-style: none;
+        }
+        
+        .info-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            color: var(--text-muted);
+        }
+        
+        .info-list li i {
+            color: var(--electric-blue);
+            margin-top: 0.3rem;
+        }
+        
+        .info-list li strong {
+            color: var(--text-light);
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        
+        .hours-list {
+            list-style: none;
+        }
+        
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+        }
+        
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .hours-list li.closed {
+            color: #ff4757;
+        }
+        
+        .hours-list li.today {
+            color: var(--neon-green);
+            font-weight: 600;
+        }
+        
+        .map-container {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 100%;
+            min-height: 400px;
+            background: var(--charcoal-lighter);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Map fallback when iframe isn't available */
+        .map-fallback {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .map-fallback i {
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.1);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--charcoal-bg);
+            border-top: 1px solid var(--glass-border);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-about p {
+            color: var(--text-muted);
+            margin-top: 1rem;
+            max-width: 400px;
+        }
+
+        .footer-heading {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--electric-blue);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--charcoal-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            transition: var(--transition);
+            border: 1px solid var(--glass-border);
+        }
+
+        .social-links a:hover {
+            background: var(--electric-blue);
+            color: white;
+            transform: translateY(-3px);
+            border-color: var(--electric-blue);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-grid, .contact-wrapper, .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .about-image {
+                aspect-ratio: 16/9;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--charcoal-bg);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transition: 0.4s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-dumbbell"></i> Tara <span>Gym</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-pattern"></div>
+        <div class="container">
+            <div class="hero-content reveal">
+                <div class="badge-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4.6/5 (71+ Reviews)</span>
+                </div>
+                <h1>Unleash Your True <br><span class="highlight-blue">Strength</span> & <span class="highlight-green">Potential</span></h1>
+                <p>Welcome to Tara Gym, Patna's premier fitness center. Experience top-tier equipment, expert trainers, and a powerful atmosphere designed for your transformation.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">Join Today</a>
+                    <a href="#services" class="btn btn-outline">Explore Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div class="about-content reveal">
+                    <h2>Elevate Your <span class="highlight-blue">Fitness</span> Journey</h2>
+                    <p>At Tara Gym, we believe in building stronger bodies and resilient minds. Located in the heart of Patna at Gujari Bazar, we provide a clean, hygienic, and highly motivating environment for everyone.</p>
+                    <p>Whether you're a beginner or an experienced athlete, our supportive atmosphere welcomes both men and women to train comfortably and confidently.</p>
+                    
+                    <ul class="features-list">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <span>Clean & Hygienic Facility</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <span>Knowledgeable & Certified Trainers</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <span>Supportive Atmosphere for Men & Women</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Our <span class="highlight-blue">Programs</span></h2>
+                <p>Comprehensive fitness solutions tailored to help you achieve your specific goals efficiently and safely.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3>Cardio Training</h3>
+                    <p>Boost your endurance, burn calories, and improve cardiovascular health with our advanced cardio equipment and specialized training routines.</p>
+                </div>
+                
+                <div class="service-card reveal" style="transition-delay: 0.1s;">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+                    <h3>Strength Training</h3>
+                    <p>Build muscle, increase power, and tone your body utilizing our extensive range of free weights, resistance machines, and functional gear.</p>
+                </div>
+                
+                <div class="service-card reveal" style="transition-delay: 0.2s;">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-user-group"></i>
+                    </div>
+                    <h3>Personal Training</h3>
+                    <p>Get personalized attention, customized workout plans, and nutritional guidance from our knowledgeable trainers to fast-track your results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid reveal">
+                <div class="stat-item">
+                    <h3>71+</h3>
+                    <p>5-Star Reviews</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Expert Trainers</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Machines</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Commitment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Gallery Section (Demo) -->
+    <section id="facilities" class="facilities">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Premium <span class="highlight-green">Facilities</span></h2>
+                <p>Experience fitness in a modern, well-equipped environment designed for maximum performance.</p>
+            </div>
+            
+            <div class="gallery-grid reveal">
+                <div class="gallery-item">
+                    <span class="demo-label">Demo</span>
+                    <i class="fa-solid fa-server"></i>
+                    <h4>Modern Equipment</h4>
+                </div>
+                <div class="gallery-item">
+                    <span class="demo-label">Demo</span>
+                    <i class="fa-solid fa-person-running"></i>
+                    <h4>Cardio Zone</h4>
+                </div>
+                <div class="gallery-item">
+                    <span class="demo-label">Demo</span>
+                    <i class="fa-solid fa-weight-hanging"></i>
+                    <h4>Free Weights Area</h4>
+                </div>
+                <div class="gallery-item">
+                    <span class="demo-label">Demo</span>
+                    <i class="fa-solid fa-clipboard-user"></i>
+                    <h4>Personal Training Area</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section (Demo) -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Member <span class="highlight-blue">Success</span></h2>
+                <p>Read what our community has to say about their experience at Tara Gym.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <span class="demo-label">Demo</span>
+                    <i class="fa-solid fa-quote-left"></i>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The trainers here are incredibly knowledgeable. The environment is extremely supportive for women, which is exactly what I was looking for in Patna."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">P</div>
+                        <div class="author-info">
+                            <h4>Priya S.</h4>
+                            <p>Member for 1 year</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
+                    <span class="demo-label">Demo</span>
+                    <i class="fa-solid fa-quote-left"></i>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="testimonial-text">"Very clean and hygienic facility. The equipment is modern and well-maintained. The best place in Gujari Bazar for serious strength training."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-info">
+                            <h4>Rahul K.</h4>
+                            <p>Member for 6 months</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contact" class="location-contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Find <span class="highlight-blue">Us</span></h2>
+                <p>Ready to start? Visit us or get in touch today.</p>
+            </div>
+            
+            <div class="contact-wrapper">
+                <div class="contact-details reveal">
+                    <div class="contact-info-card">
+                        <h3><i class="fa-solid fa-address-card"></i> Contact Info</h3>
+                        <ul class="info-list">
+                            <li>
+                                <i class="fa-solid fa-location-dot"></i>
+                                <div>
+                                    <strong>Address</strong>
+                                    2nd Floor, Waqf Board Building,<br>
+                                    Gujari Bazar, Sadikpur,<br>
+                                    Patna, Bihar 800008
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-phone"></i>
+                                <div>
+                                    <strong>Phone</strong>
+                                    <a href="tel:+916124084375">+91 612 408 4375</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/916124084375" target="_blank" class="btn btn-accent" style="margin-top: 1rem; width: 100%;">
+                            <i class="fa-brands fa-whatsapp" style="margin-right: 8px; font-size: 1.2rem;"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <h3><i class="fa-solid fa-clock"></i> Operating Hours</h3>
+                        <ul class="hours-list">
+                            <li><span>Monday</span> <span>5:00 AM – 9:00 PM</span></li>
+                            <li><span>Tuesday</span> <span>5:00 AM – 9:00 PM</span></li>
+                            <li><span>Wednesday</span> <span>5:00 AM – 9:00 PM</span></li>
+                            <li><span>Thursday</span> <span>5:00 AM – 9:00 PM</span></li>
+                            <li><span>Friday</span> <span>5:00 AM – 9:00 PM</span></li>
+                            <li><span>Saturday</span> <span>5:00 AM – 9:00 PM</span></li>
+                            <li class="closed"><span>Sunday</span> <span>Closed</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="map-container reveal" style="transition-delay: 0.2s;">
+                    <!-- Using an iframe for Google Maps with the address provided -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14392.35824213328!2d85.197368!3d25.593635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed5f7e6f34e40b%3A0xc4842d0571d87198!2sGujari%20Bazar%2C%20Sadikpur%2C%20Patna%2C%20Bihar%20800008!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="logo">
+                        <i class="fa-solid fa-dumbbell"></i> Tara <span>Gym</span>
+                    </a>
+                    <p>Premium fitness center in Patna dedicated to helping you achieve your health and fitness goals in a supportive, hygienic, and motivating environment.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#facilities">Facilities</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-col">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Cardio Training</a></li>
+                        <li><a href="#services">Strength Training</a></li>
+                        <li><a href="#services">Personal Training</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tara Gym. All rights reserved. | <span class="demo-label" style="position: static; display: inline-block; margin-left: 10px;">Demo Website</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/916124084375" class="whatsapp-float" target="_blank" title="Contact us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const navLinksItems = document.querySelectorAll('.nav-links a');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if(navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        navLinksItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Sticky Header on Scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger on load
+
+        // Highlight Active Nav Link
+        const sections = document.querySelectorAll("section");
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinksItems.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href").includes(current)) {
+                    link.classList.add("active");
+                }
+            });
+            
+            // Highlight current day in hours list
+            const date = new Date();
+            const dayOfWeek = date.getDay(); // 0 is Sunday
+            const hoursList = document.querySelectorAll('.hours-list li');
+            
+            // Adjust day to match our list (Monday is 0, Sunday is 6 in our list)
+            let listIndex = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
+            
+            if(hoursList[listIndex]) {
+                hoursList[listIndex].classList.add('today');
+                hoursList[listIndex].innerHTML += ' <span style="font-size:0.8rem; background:var(--neon-green); color:var(--charcoal-bg); padding:2px 6px; border-radius:4px; margin-left:10px;">Today</span>';
+            }
+        });
+        
+        // Trigger scroll event once to handle initial state
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>
